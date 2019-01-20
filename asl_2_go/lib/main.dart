@@ -85,12 +85,61 @@ class _CameraExampleHomeState extends State<CameraExampleHome> {
   /// Display the preview from the camera (or a message if the preview is not available).
   Widget _cameraPreviewWidget() {
     if (controller == null || !controller.value.isInitialized) {
-      return const Text(
-        'Tap a camera',
-        style: TextStyle(
-          color: Colors.white,
-          fontSize: 24.0,
-          fontWeight: FontWeight.w900,
+      return Scaffold(
+        backgroundColor: Colors.pink,
+        appBar: null,
+        body: Center(
+          // Center is a layout widget. It takes a single child and positions it
+          // in the middle of the parent.
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text(
+                'ASL',
+                style: TextStyle(
+                  fontSize: 60.0,
+                  color: Colors.white,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+              Text(
+                '— 2 —',
+                style: TextStyle(
+                  fontSize: 60.0,
+                  color: Colors.white,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+              Text(
+                'GO',
+                style: TextStyle(
+                  fontSize: 60.0,
+                  color: Colors.white,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+              Container(
+                height: 100.0,
+              ),
+
+              ButtonTheme(
+                  minWidth: 100.0,
+                  height: 50.0,
+                  // buttonColor: Colors.white,
+                  child: RaisedButton(
+                    child: Text(
+                      "Tap a Camera Below",
+                      style: TextStyle(
+                        fontSize: 25.0,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+              disabledColor: Colors.white,
+              disabledTextColor: Colors.black,
+                  )
+              )
+            ],
+          ),
         ),
       );
     } else {
